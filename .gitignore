@@ -1,0 +1,62 @@
+# Environments
+.env/
+.venv/
+venv/
+source/.env/
+source/.venv/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Python builds and packaging
+build/
+dist/
+source/build/
+source/dist/
+*.spec
+*.egg-info/
+*.manifest
+
+# Patcher backups (created next to patched targets)
+*.agybak
+*.vscodebak
+*.bak
+*.bak-*
+
+# Downloaded CLI binaries and test-agy artifacts
+*.tar.gz
+*.zip
+antigravity
+antigravity.exe
+agy
+agy.exe
+agy_arm64_macos
+agy_x64_win.exe
+agy-copy-*
+* extracted/
+
+# Temporary local app files
+main.js
+app/
+app_original.asar
+dist/
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# AI agents
+.kimchi/
+.mimocode/
+.kilo/
+.opencode/
