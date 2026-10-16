@@ -225,4 +225,38 @@ jobs:
           path: source/dist/Open_AG_Patcher_macOS
           if-no-files-found: error
 
+  # ─────────────────────────────────────────────────────────────────────────────
+  # Release — automatically creates GitHub Release on tags v*
+  # ─────────────────────────────────────────────────────────────────────────────
+  release:
+    name: Create GitHub Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs:
+      - build-windows
+      - build-windows-arm64
+      - build-linux-x64
+      - build-linux-arm64
+      - build-macos
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v7
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ github.ref_name }}" release-assets/* \
+            --title "Release ${{ github.ref_name }}" \
+            --generate-notes
+
+
 
