@@ -110,7 +110,7 @@ PYTHONPATH=source python3 -c "from patcher.agy.patcher import get_status; print(
 ## Использование
 
 ```bash
-cd ~/open-antigravity-patcher-2/source
+cd ~/open-antigravity-patcher/source
 python3 main.py ~/.local/bin/agy
 # PATCH -> 3 (Antigravity CLI) — применит 3 гейта
 # RESTORE -> 7 — откат из .agybak
