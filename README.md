@@ -116,4 +116,7 @@ python3 main.py ~/.local/bin/agy
 # RESTORE -> 7 — откат из .agybak
 ```
 
+`main.py` имеет shebang и exec-бит — запускается и напрямую (`./main.py`),
+поэтому через симлинк в `~/.local/bin` (`patch`/`ptch`) работает как команда.
+
 Версия: `1.3.9` (`patcher/constants.py`, `source/version.txt`).
